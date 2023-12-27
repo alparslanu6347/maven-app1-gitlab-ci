@@ -1,0 +1,62 @@
+variables:
+  # MAVEN_OPTS: -Dmaven.repo.local=.m2/repository
+  MAVEN_OPTS: >-
+    -Dhttps.protocols=TLSv1.2
+    -Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository
+  MAVEN_CLI_OPTS: >-
+    -DskipTests
+
+image: maven:latest
+
+stages:
+    - build
+    - test
+    - package
+    - install
+    - deploy
+
+cache:
+  paths:
+    - .m2/repository
+    - target
+
+build_job:
+  stage: build
+  tags:
+    - docker 
+  script: 
+    - echo "Maven compile started"
+    - "mvn compile"
+
+test_job:
+  stage: test
+  tags:
+    - docker 
+  script: 
+    - echo "Maven test started"
+    - "mvn test"
+
+package_job:
+  stage: package
+  tags:
+    - docker 
+  script: 
+    - echo "Maven packaging started"
+    - "mvn package"
+
+install_job:
+  stage: install
+  tags:
+    - docker 
+  script: 
+    - echo "Maven install started"
+    - "mvn install"
+    - echo "$CI_RUNNER_ID"
+    - echo "$CI_RUNNER_TAGS"
+
+Deploy_job:
+  stage: deploy
+  tags:
+    - docker 
+  script: 
+    - echo "Maven deploy started"
