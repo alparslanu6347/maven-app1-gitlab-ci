@@ -1,7 +1,9 @@
 - My public GitLab project/repository :  [https://gitlab.com/arrowlevent/maven-app1]
 
-- git clone https://gitlab.com/arrowlevent/maven-app1
-
+```bash
+git clone https://gitlab.com/arrowlevent/maven-app1
+cd maven-app1
+tree
 - maven-app1 :
     - src
       - main
@@ -19,6 +21,7 @@
     - .gitlab-cicd.yml
     - README.md
     - pom.xml
+```
 
 # Create .gitlab-ci.yml in the GitLab :
 
