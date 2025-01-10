@@ -1,3 +1,5 @@
+# maven-app1-gitlab-ci
+
 - My public GitLab project/repository :  [https://gitlab.com/arrowlevent/maven-app1]
 
 ```bash
@@ -23,7 +25,7 @@ tree
     - pom.xml
 ```
 
-# Create .gitlab-ci.yml in the GitLab :
+## Create .gitlab-ci.yml in the GitLab :
 
 - ***`***Maven`*** : A Build Lifecycle is Made Up of Phases. Each of these build lifecycles is defined by a different list of build phases, wherein a build phase represents a stage in the lifecycle. For example, the default lifecycle comprises of the following phases (for a complete list of the lifecycle phases, refer to the Lifecycle Reference):
 [https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html]
@@ -67,7 +69,7 @@ These lifecycle phases (plus the other lifecycle phases not shown here) are exec
   [https://docs.gitlab.com/ee/ci/yaml/index.html#tags]
 
 
-# `$CI_RUNNER_TAGS` : ["gce", "east-c", "linux", "ruby", "mysql", "postgres", "mongo", "git-annex", "shared", "docker", "saas-linux-small-amd64"]  BU TAG'ler KULLANILIYOR
+## `$CI_RUNNER_TAGS` : ["gce", "east-c", "linux", "ruby", "mysql", "postgres", "mongo", "git-annex", "shared", "docker", "saas-linux-small-amd64"]  BU TAG'ler KULLANILIYOR
 
 ```yaml (.gitlab-ci.yml)
 variables:
@@ -134,7 +136,7 @@ Deploy_job:
     - echo "Maven deploy started"
 ```
 
-# Create pom.xml :
+## Create pom.xml :
 
 ```xml  (pom.xml)
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -172,7 +174,7 @@ Deploy_job:
 </project>
 ```
 
-# Create App.java 
+## Create App.java 
 
 ```java (App.java)
 package com.example.app;
@@ -188,7 +190,7 @@ public class App
 }
 ```
 
-# Create AppTest.java
+## Create AppTest.java
 
 
 ```java (AppTest.java)
@@ -236,7 +238,7 @@ public class AppTest
 
 - Pipeline aşamalarını/joblarını buradan gözlemleyebilirsin`Build` -- `Pipelines`
 
-# Resources :
+## Resources :
 
 - https://gitlab.com/arrowlevent/maven-app1
 - https://gitlab.com/gitlab-examples/maven/simple-maven-example
